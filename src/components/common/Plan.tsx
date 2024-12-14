@@ -1,32 +1,33 @@
 import React from 'react';
+import icons from '../../assets/icons.svg';
 
 interface PlanProps {
   planImg: string;
   planName: string;
-  planPrice: number;
   onInputChange: React.ChangeEventHandler<HTMLInputElement>;
-  formPlan: string;
+  planPrice: number;
   billingPlanYearly: boolean;
+  formPlan: string;
 }
 
-const Plan: React.FC<PlanProps> = ({ planImg, planName, planPrice, onInputChange, formPlan, billingPlanYearly }) => {
+const Plan: React.FC<PlanProps> = ({ billingPlanYearly, planImg, planName, planPrice, onInputChange, formPlan }) => {
   return (
     <li className="form__plans--plan">
       <label>
         <div className="form__plan--icon">
-          <img src={planImg} alt={planName} />
+          <svg className='icon'>
+            <use href={`${icons}${planImg}`}></use>
+          </svg>
         </div>
-        <span className="form__plan--name">{planName}</span>
+        <span className='form__plan--name'>{planName}</span>
         <input
+          checked={planName.toLowerCase() === formPlan}
+          value={planName.toLowerCase()}
+          onChange={onInputChange}
           type="radio"
           name="formPlan"
-          value={planName}
-          checked={formPlan === planName}
-          onChange={onInputChange}
         />
-        <span className="form__plan--price">
-          {billingPlanYearly ? `+$${planPrice * 12}/yr` : `+$${planPrice}/mo`}
-        </span>
+        <p className="form__plan--price">{billingPlanYearly ? `$${planPrice * 12}/yr` : `$${planPrice}/mo`}</p>
       </label>
     </li>
   );
