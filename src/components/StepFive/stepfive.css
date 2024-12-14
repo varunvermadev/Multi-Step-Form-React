@@ -1,0 +1,24 @@
+.step-five{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.step-five .icon{
+    width:15rem;
+    height:15rem;
+}
+
+@media screen and (max-width : 400px){
+    .step-five .icon{
+        width:10rem;
+        height:10rem;
+        margin-top: 2rem;
+    }
+
+
+}

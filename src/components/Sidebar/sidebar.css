@@ -1,0 +1,109 @@
+.header{
+    position:relative;
+    height:100%;
+    min-width: 25%;
+    background : url('/src/assets/bg-sidebar-desktop.svg');
+    padding:5rem 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1rem;
+    background-position: bottom;
+}
+
+.sidebar__list{
+    list-style-type: none;
+    color:var(--white);
+}
+.sidebar__list .sidebar__list--item:not(:last-child){
+    margin-bottom: 3rem;
+}
+.sidebar__list .sidebar__list--item{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    cursor: pointer;
+}
+
+.sidebar__list .sidebar__list--item .step-info{
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+}
+
+.sidebar__list .sidebar__list--item .step-info .step-info__number{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color:var(--light-gray);
+}
+
+.sidebar__list .sidebar__list--item .step-info .step-info__title{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+
+
+.sidebar__list .sidebar__list--item .step{
+    font-size: 1.8rem;
+    width:3.5rem;
+    height:3.5rem;
+    border-radius: 50%;
+    border:1px solid var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:all .2s;
+}
+
+
+.sidebar__list .sidebar__list--item:hover .step,
+.sidebar__list .sidebar__list--item.active .step{
+
+    background-color: var(--secondary-color);
+    color:var(--primary-color);
+}
+
+
+@media screen and (max-width : 400px){
+
+    .sidebar__list .sidebar__list--item .step-info{
+        display: none;
+    }
+
+    .sidebar__list .sidebar__list--item{
+        display: block;
+        
+    }
+    .header{
+        padding:0;
+        width:100%;
+        margin:0;
+        height:25%;
+        background: url('../../assets/bg-sidebar-mobile.svg') no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0;
+    }
+
+    .sidebar{
+        height:100%;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .sidebar__list{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:2rem;
+        margin-top: -5rem;
+        
+    }
+
+    .sidebar__list .sidebar__list--item:not(:last-child){
+        margin:0;
+    }
+}

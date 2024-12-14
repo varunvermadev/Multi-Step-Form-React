@@ -1,0 +1,84 @@
+.form__addons{
+    
+    list-style-type: none;
+}
+
+.form__addon{
+    padding: 2rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 1rem;
+    transition : all .2s;
+}
+
+.form__addon:not(:last-child){
+    margin-bottom: 2rem;
+}
+
+.form__addon label{
+    display: flex;
+    justify-content: flex-start;
+    gap:2rem;
+    align-items: center;
+}
+
+.form__addon input[type='checkbox']{
+    appearance: none;
+    width:2rem;
+    height: 2rem;
+    border:1px solid var(--light-gray);
+    border-radius: .5rem;
+}
+
+.form__addon input[type='checkbox']:checked{
+    background: url('../../assets/icon-checkmark.svg') var(--tertiary-color);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    
+
+}
+
+.form__addon:hover,
+.form__addon:has(input[type='checkbox']:checked){
+    background:var(--background-plan-hover);
+    border-color:var(--tertiary-color);
+    
+}
+
+.form__addon--info{
+    margin-right: auto;
+}
+
+.form__addon--info .addon-name{
+
+    color:var(--primary-color);
+    font-weight: 600;
+    display: block;
+    margin-bottom:.6rem;
+
+    
+
+}
+
+.addon-price{
+    color:var(--tertiary-color);
+
+}
+
+
+@media screen and (max-width : 400px) {
+
+    .form__addon {
+        padding: 1rem;
+    }
+
+    .form__addon--info{
+        font-size: 1.6rem;
+    }
+
+    .form__addon--info .addon-desc{
+        font-size: 1.4rem;
+        margin-top: -1rem;;
+    }
+    
+}

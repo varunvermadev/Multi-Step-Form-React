@@ -1,0 +1,173 @@
+:root {
+        --primary-color: #03295a; /* Marine blue */
+        --secondary-color: #bde1ff; /* Light blue */
+        --tertiary-color: #493cff; /* Purplish blue */
+        --error-text-color: #ed3b5a; /* Strawberry red */
+
+        --dark-gray: #8b92a3; /* Cool gray */
+        --light-gray: #d6d9e6; /* Light gray */
+        --white: #ffffff; /* White */
+
+        --background-hover : rgba(189, 225, 255,.15);
+        --background-plan-hover : rgba(73, 60, 255,.25);
+}
+
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: "Ubuntu";
+    color:var(--dark-gray);
+    line-height: 1;
+    background:var(--secondary-color);
+}
+
+.multi-step-form{
+    width:90vw;
+    height:99vh;
+    margin:.5vh auto;
+    padding:2rem;
+    display:flex;
+    align-items: flex-start;
+    background:var(--white);
+    border-radius: 2rem;
+
+}
+
+.form{
+    padding:5rem 10rem;
+    width:100%;
+    align-self: stretch;
+    position: relative;
+}
+
+.heading__primary{
+    color:var(--primary-color);
+    font-size: 3.2rem;
+    text-transform: capitalize;
+}
+
+.heading__primary--desc{
+    margin-top: .5rem;
+    margin-bottom: 3rem;
+}
+
+.form__item{
+    width:100%;
+}
+
+.form__item:not(:last-child){
+    margin-bottom: 3rem;
+}
+
+
+.form__buttons{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    left:0;
+    bottom:2rem;
+    padding: 0 10rem ;
+}
+
+
+.form__button{
+    padding: 1.3rem 1.3rem;
+    border:none;
+    background:var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    cursor:pointer;
+    border-radius: .8rem;
+
+}
+
+.form__button:last-child{
+    margin-left: auto;
+}
+
+.form__button.disabled{
+    background:none;
+    color:var(--dark-gray);
+    cursor:not-allowed;
+}
+    
+
+.form__button.hide__button { 
+    background:none;  background:none;
+    color:var(--dark-gray);
+    cursor:not-allowed;
+}
+
+
+
+
+.change-plan{
+    text-decoration: underline;
+    color: var(--primary-color);
+    background:none;
+    border:none;
+    outline:none;
+    text-transform: capitalize;
+}
+
+
+@media screen and (max-width : 400px) {
+
+    .multi-step-form{
+        width:100vw;
+        height:100vh;
+        display:flex;
+        flex-direction: column;
+        background:none;
+        padding:0;
+        margin:0;
+    }
+
+    body{
+        line-height: 1.5;
+    }
+
+    html{
+        font-size: 50%;
+    }
+
+    .header{
+        width:100%
+    }
+
+    .sidebar__list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form{
+        padding:0;
+        padding:2rem 5rem;
+        background:white;
+        border-radius: 2rem;
+        width:90%;
+        margin: -7rem auto;
+    }
+
+    .form__buttons{
+        background:white;
+        bottom: -16rem;
+        border-radius: 1rem;
+        padding: 2rem 5rem;
+
+    }
+
+}
